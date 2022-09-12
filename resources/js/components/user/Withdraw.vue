@@ -4,7 +4,7 @@
         <label class="block font-medium text-sm text-white" for="transaction_amount">
           Enter amount to withdraw:
         </label>
-        <input v-model="data.transaction_amount" min="500" max="25000" class="p-2 rounded-md shadow-sm bg-white border border-gray-300 text-gray-400 block mt-1 w-full" type="number" id="transaction_amount" name="transaction_amount" required="required" autocomplete="current-password">
+        <input v-model="data.transaction_amount" min="500" max="25000" step="500" class="p-2 rounded-md shadow-sm bg-white border border-gray-300 text-gray-400 block mt-1 w-full" type="number" id="transaction_amount" name="transaction_amount" required="required" autocomplete="current-password">
       </div>
       <div v-if="errors" class="text-red-500 py-2 font-semibold">
         <span>{{ errors.message }}</span>
@@ -17,10 +17,7 @@
     </form>
   </template>
 
-
-
-    <script>
-
+<script>
     export default {
       computed: {
         user() {
@@ -41,7 +38,6 @@
         checkForm(){
           let chk= this.user.balance - this.data.transaction_amount
           if (chk<0 || chk==0){
-            // return this.errors="cant update"
             this.$refs.withdrawForm.reset()
             swal("Unable to transact!", "You can only withdraw less than active balance, you tried to withdraw: " + this.data.transaction_amount,"warning");
           }
@@ -73,10 +69,9 @@
             })
             this.$refs.withdrawForm.reset()
             swal("Succesfuly withdrawn!", "You withdrew PKR: " + this.data.transaction_amount, "success");
-            // alert("succesfully withdrawn! PKR: " + this.data.transaction_amount)
           }
       }
       }
     }
-    </script>
+</script>
 

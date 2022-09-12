@@ -27,7 +27,11 @@ Route::get('{any}', fn () => view('app'))->where('any', '^((?!api).)*');
 Route::post('/user/makeTransaction', [TransactionController::class, 'create']);
 Route::post('/user/history', [TransactionController::class, 'showHistory']);
 Route::post('/user/favlist', [MovieController::class, 'showFavouriteList']);
+Route::post('/user/movlist', [MovieController::class, 'showAll']);
+Route::post('/user/like', [MovieController::class, 'like']);
+Route::post('/user/dislike', [MovieController::class, 'dislike']);
+Route::get('search',[MovieController::class, 'index']);
+Route::get('res-search',[MovieController::class, 'search']);
 
 
-// Route::post('user/deposit', [MakeTransaction::class, 'create'])
 

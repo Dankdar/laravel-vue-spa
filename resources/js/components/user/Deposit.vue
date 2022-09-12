@@ -4,7 +4,7 @@
       <label class="block font-medium text-sm text-white" for="transaction_amount">
         Enter amount to deposit:
       </label>
-      <input v-model="data.transaction_amount" min="500" max="25000" class="p-2  rounded-md shadow-sm bg-white border border-gray-300 text-gray-400 block mt-1 w-full" type="number" id="transaction_amount" name="transaction_amount" required="required">
+      <input v-model="data.transaction_amount" min="500" max="25000" step="500" class="p-2  rounded-md shadow-sm bg-white border border-gray-300 text-gray-400 block mt-1 w-full" type="number" id="transaction_amount" name="transaction_amount" required="required">
     </div>
     <div v-if="errors" class="text-red-500 py-2 font-semibold">
       <span>{{ errors.message }}</span>
@@ -18,7 +18,7 @@
 </template>
 
 
-  
+
   <script>
   import swal from 'sweetalert';
   export default {
@@ -32,7 +32,7 @@
         errors: null,
         data: {
           transaction_amount: null,
-          transaction_type: "deposit" 
+          transaction_type: "deposit"
         }
       }
     },
@@ -60,11 +60,10 @@
         })
         .catch((error) => {
           this.errors = error.response.data
-        }) 
+        })
         this.$refs.depositForm.reset()
         swal("Succesfuly deposited!", "You deposited PKR: " + this.data.transaction_amount, "success");
         }
       }
     }
     </script>
-    

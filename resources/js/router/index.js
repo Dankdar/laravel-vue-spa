@@ -15,6 +15,7 @@ import ConfirmPassword from '@/js/pages/auth/ConfirmPassword'
 import Home from '@/js/pages/Home'
 import User from '@/js/pages/User'
 import Movies from '@/js/pages/Movies'
+import Search from '@/js/components/user/Search'
 
 
 const router = createRouter({
@@ -31,6 +32,7 @@ const router = createRouter({
                 { path: "/transaction", name: 'Transaction', component: Transaction },
                 { path: "/History", name: 'History', component: History },
                 { path: "/Movies", name: 'Movies', component: Movies },
+                { path: "/Search", name:'Search', component: Search},
             ]
         },
         {
