@@ -149,6 +149,10 @@ export default {
       movies: [],
     }
   },
+  beforeMount() {
+    this.getfavlist()
+    this.getmovlist()
+    },
   methods: {
     getfavlist(){
       this.data['id'] = this.user.id
@@ -173,7 +177,6 @@ export default {
           this.errors = error.response.data
         })
     },
-
     like(movie_id){
       this.data['id'] = this.user.id
       this.data['movie_id'] = movie_id

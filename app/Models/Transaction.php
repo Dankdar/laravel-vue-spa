@@ -21,10 +21,10 @@ class Transaction extends Model
         'transaction_amount',
         'transaction_type',
     ];
-    protected $casts = [
-        'created_at' => 'datetime:d/m/Y h:i A', // Change your format
-        'updated_at' => 'datetime:d/m/Y h:i A',
-    ];
+//    protected $casts = [
+//        'created_at' => 'datetime:d/m/Y h:i A', // Change your format
+//        'updated_at' => 'datetime:d/m/Y h:i A',
+//    ];
     /**
  * Prepare a date for array / JSON serialization.
  *

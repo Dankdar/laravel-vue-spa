@@ -20275,6 +20275,9 @@ __webpack_require__.r(__webpack_exports__);
       records: []
     };
   },
+  beforeMount: function beforeMount() {
+    this.gethistory();
+  },
   methods: {
     gethistory: function gethistory() {
       var _this = this;
@@ -20824,6 +20827,10 @@ __webpack_require__.r(__webpack_exports__);
       disliked: [],
       movies: []
     };
+  },
+  beforeMount: function beforeMount() {
+    this.getfavlist();
+    this.getmovlist();
   },
   methods: {
     getfavlist: function getfavlist() {

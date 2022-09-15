@@ -20,21 +20,21 @@
           <div class="col-start-2 col-span-4 ... "  style="text-align:center">
             <div v-if="records.length">
             <table class="table-auto bg-gradient-to-r from-fuchsia-500 to-violet-400" id= "table-id">
-  <thead>
-    <tr>
-      <th>Transaction Type</th>
-      <th>Amount</th>
-      <th>Date and Time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="record in records" :key="records.id">
-      <td>{{ record.transaction_type }}</td>
-      <td>PKR {{ record.transaction_amount.toLocaleString("en-US") }}</td>
-      <td>{{ record.created_at }}</td>
-    </tr>
-  </tbody>
-</table>
+              <thead>
+                <tr>
+                  <th>Transaction Type</th>
+                  <th>Amount</th>
+                  <th>Date and Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="record in records" :key="records.id">
+                  <td>{{ record.transaction_type }}</td>
+                  <td>PKR {{ record.transaction_amount.toLocaleString("en-US") }}</td>
+                  <td>{{ record.created_at }}</td>
+                </tr>
+              </tbody>
+            </table>
             </div>
               <div class="text-white" v-else>
                 no records to show.
@@ -46,7 +46,6 @@
           </div>
         </div>
       </div>
-
   </template>
 
 
@@ -65,6 +64,9 @@
         records : []
       }
     },
+    beforeMount() {
+      this.gethistory()
+      },
     methods: {
       gethistory(){
         this.data['id'] = this.user.id

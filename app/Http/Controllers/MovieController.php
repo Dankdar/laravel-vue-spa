@@ -62,15 +62,10 @@ class MovieController extends Controller
 
     public function search(Request $request)
     {
-//        $posts=Post::where('title',$request->keywords)->get();
         $keyword = $request->keywords;
         return $results = DB::table('movies')
-//            ->select(movies.*)
             ->where('movie_name','LIKE','%'.$keyword.'%')
             ->get();
-
-//        return response()->json($posts);
-
     }
 
 
