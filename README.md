@@ -6,7 +6,7 @@
 
 ## Laravel Fortify Vue SPA
 
-A simple and clean boilerplate to start a new SPA project with authentication and more features from fortify. Its like the little sister of Jetstream, but as SPA. This boilerplate uses the following tools:
+A simple and clean boilerplate to start a new SPA project with authentication and more features from fortify. Its like a little sister of Jetstream, but as a SPA. This boilerplate uses the following tools:
 
 - [Laravel 9.x](https://github.com/laravel/laravel)
 - [Laravel Sanctum](https://laravel.com/docs/9.x/sanctum)
